@@ -37,24 +37,22 @@ public class LoopEx27_테스트문제정답 {
 		System.out.print("key값 입력 : ");
 		int key = scan.nextInt();
  
-		Boolean isRun = true;
-		int i = 1;
-		int zero = 0;
+		int count = 1;
+		Boolean firstCheck = true;
 		int answer = 0;
 		
-		while (isRun) {
+		while (true) {
 			
 			int num = scan.nextInt();
 			
-			if (num == key && zero == 0 ) {
-				answer += i;
-				zero = 1;
+			if (num == key && firstCheck == true ) {
+				answer += count;
+				firstCheck = false;
 			}
 			
-			if (num == -1) {
-				isRun = false;
-			}
-			i++;
+			if (num == -1) break;
+		
+			count++;
 		}
 		
 		System.out.println("결과 : key값 7가 첫번재 나타난 것은 " + answer + "번째 이다.");

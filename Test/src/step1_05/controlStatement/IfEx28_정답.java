@@ -32,7 +32,17 @@ public class IfEx28_정답 {
 		System.out.print("월 입력: ");
 		int getMonth = scan.nextInt();
 		
-	
+		if (getMonth == 2) System.out.print(28);
+		else if (getMonth <= 6) {
+			if (getMonth % 2 == 0) System.out.print(30);
+			else System.out.print(31);
+		}
+		else {
+			if (getMonth % 2 == 1) System.out.print(30);
+			else System.out.print(31);
+		}
+		
+		
 		scan.close();
 
 	}

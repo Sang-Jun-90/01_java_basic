@@ -27,13 +27,13 @@ public class LoopEx25_테스트문제정답 {
 //		# 답 : 63
 		
 		int i = 1;
-		Boolean isRunning = true;
+
 		
-		while (isRunning) {
+		while (true) {
 			int num = 9 * i;
 			if (num / 10 >= 6) {
 				System.out.print(num);
-				isRunning = false;
+				break;
 			}
 			i++;
 		}
@@ -43,12 +43,12 @@ public class LoopEx25_테스트문제정답 {
 //		# 답 149
 		
 		int j = 1;
-		Boolean isRun = true;
+
 		int max = 0;
 		
-		while (isRun) {
+		while (true) {
 			if (j % 8 == 5) max = j;
-			if (j > 150) isRun = false;
+			if (j > 150) break;
 			j++;
 		}
 		System.out.print(max);
@@ -68,20 +68,17 @@ public class LoopEx25_테스트문제정답 {
 //		# 문제4) 28의 배수 중에서 가장 큰 세자리 수를 구하시요.
 //		# 답 980
 		
-		int etMax  = 0;
+		int max28  = 0;
 		int l = 1;
-		Boolean isR = true;
-		
-		while (isR) {
+
+		while (true) {
 			int mul28 = l * 28;
-			if (mul28 > 1000) {
-				isR = false;
-				continue;
-			}
-			if (etMax <= mul28 ) etMax = mul28;
+			if (mul28 > 1000) break;
+
+			if (max28 <= mul28 ) max28 = mul28;
 			l++;
 		}
-		System.out.print(etMax);
+		System.out.print(max28);
 		System.out.println();
 		
 		
@@ -94,17 +91,17 @@ public class LoopEx25_테스트문제정답 {
 		
 		// while문
 		
-		Boolean isRun1 = true;
-		int n = 0;
+//		Boolean isRun1 = true;
+//		int n = 0;
+//		
+//		while (isRun1) {
+//			System.out.print((n * 8) + ", ");
+//			if (n == 4) {isRun1 = false;
+//			n++;
+//		}
 		
-		while (isRun1) {
-			System.out.print((n * 8) + ", ");
-			if (n == 4) {isRun1 = false;
-			n++;
-		}
 		
-		
-	}
+//	}
 
 }
 }

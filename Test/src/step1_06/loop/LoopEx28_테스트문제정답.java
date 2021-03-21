@@ -25,15 +25,12 @@ public class LoopEx28_테스트문제정답 {
 		
 		for (int i = 0 ; i < 9 ; i++) {
 			
-			for (int j = 8 ; j - i > 0 ; j--) {
-				
+			for (int j = 8 ; j > i ; j--) {
 				System.out.print(" ");
 			}
 			
 			for (int k = 0 ; k <= i ; k++) {
-				
 				System.out.print(i+1 + " ");
-				
 			}
 			System.out.println();
 		}

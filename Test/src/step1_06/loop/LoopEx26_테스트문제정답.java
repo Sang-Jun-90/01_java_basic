@@ -24,23 +24,21 @@ public class LoopEx26_테스트문제정답 {
 		
 		System.out.print("Enter Number ? ");
 		int getNumber = scan.nextInt();
-		int outPut = 1;
+		int answer = getNumber;
 		
-		Boolean isRun = true;
-		
-		while (isRun) {
-						
-			int count = 0;
-			for (int i = 1; i <= outPut ; i++) {
-				if (outPut % i == 0) {
+		while (true) {
+			int count = 0;		
+			answer++;
+			for (int i = 1; i <= answer ; i++) {
+				if (answer % i == 0) {
 					count++;
 				}
 			}
-			if (count == 2 && outPut > 1000) {
-				System.out.print(outPut);
-				isRun = false;
+
+			if (count == 2) {
+				System.out.print(answer);
+				break;
 			}		
-			outPut++;
 		}
 		
 		scan.close();

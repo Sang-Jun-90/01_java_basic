@@ -37,18 +37,18 @@ public class IfEx25 {
 		char chrVar= 'C';
 		
 		switch(chrVar) {
-		case 'A' : 
-			System.out.println("A로 분기합니다.");
-			break;
-		case 'B' : 
-			System.out.println("B로 분기합니다.");
-			break;
-		case 'C' : 
-			System.out.println("C로 분기합니다.");
-			break;
-			
-		default : 			
-			System.out.println("default로 분기합니다.");
+			case 'A' : 
+				System.out.println("A로 분기합니다.");
+				break;
+			case 'B' : 
+				System.out.println("B로 분기합니다.");
+				break;
+			case 'C' : 
+				System.out.println("C로 분기합니다.");
+				break;
+				
+			default : 			
+				System.out.println("default로 분기합니다.");
 			
 			
 		}

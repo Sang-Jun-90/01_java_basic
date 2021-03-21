@@ -48,15 +48,13 @@ public class LoopEx16_테스트문제 {
 		int totalRun = 0;
 		
 		boolean isRun = true;
-		
-		desX = ran.nextInt(20) - 10 ;
-		desY = ran.nextInt(20) - 10 ;
-		
-		// 제자리인 경우
-		
-		while (desX == 0 && desY == 0) {
-			desX = ran.nextInt(20) - 10 ;
-			desY = ran.nextInt(20) - 10 ;
+
+		// 목적지 설정 
+		while (true) {
+			desX = ran.nextInt(21) - 10 ;
+			desY = ran.nextInt(21) - 10 ;
+			
+			if (desX != 0 && desY != 0) break;
 		}
 		
 		// game start
@@ -81,17 +79,13 @@ public class LoopEx16_테스트문제 {
 			
 			// 방향
 			if (selectMenu == 1) {
-				System.out.println();
-				System.out.println("방향설정 : 동(1)서(2)남(3)북(4)");
-				System.out.print("선택 : ");
-				dir = scan.nextInt();
-				// 숫자 오기입	
-				while ( dir != 1 && dir != 2 && dir != 3 && dir != 4) {
-					System.out.println("뱡향(숫자)를 잘못 선택했어요.");
-					System.out.println();
+				while (true) {
 					System.out.println("방향설정 : 동(1)서(2)남(3)북(4)");
 					System.out.print("선택 : ");
 					dir = scan.nextInt();
+					
+					if (dir < 1 || dir > 4) System.out.println("뱡향(숫자)를 잘못 선택했어요.");
+					else break;
 				}
 				System.out.println("-------");
 			}
@@ -102,18 +96,17 @@ public class LoopEx16_테스트문제 {
 					System.out.println("-------");
 					continue;
 				}
-				System.out.println();
-				System.out.println("속도설정 : 1~3까지만 가능");
-				System.out.print("선택 : ");
-				speed = scan.nextInt();
-				// 숫자 오기입
-				while ( speed != 1 && speed != 2 && speed != 3 ) {
-					System.out.println();
-					System.out.println("속도(숫자)를 잘못 선택했어요.");
+
+				while ( true ) {				
 					System.out.println();
 					System.out.println("속도설정 : 1~3까지만 가능");
 					System.out.print("선택 : ");
 					speed = scan.nextInt();
+					
+					if (speed != 1 && speed != 2 && speed != 3)	System.out.println("속도(숫자)를 잘못 선택했어요.");
+					else break;
+					System.out.println();
+
 				}
 				System.out.println("-------");
 			}
@@ -126,32 +119,29 @@ public class LoopEx16_테스트문제 {
 					System.out.println("-------");
 					continue;
 				}
-				else if (dir == 1) {
-					x += speed;
-					totalRun += speed;
-				}
-				else if (dir == 2) {
-					x -= speed;
-					totalRun += speed;
-				}
-				else if (dir == 3) {
-					y -= speed;
-					totalRun += speed;
-				}
-				else if (dir == 4) {
-					y += speed;
-					totalRun += speed;
-				}
-				else if (dir == 0) {
-					System.out.println("방향을 먼저 설정해주세요.");
-					System.out.println("-------");
-					continue;
-				}
-				else {
-					System.out.println("숫자를 잘못 선택했어요.");
-					continue;
-				}
 				
+				switch (dir){
+					case 1 :
+						x += speed;
+						totalRun += speed;
+						break;
+					case 2 :
+						x -= speed;
+						totalRun += speed;
+						break;
+					case 3 :
+						y -= speed;
+						totalRun += speed;
+						break;
+					case 4 :
+						y += speed;
+						totalRun += speed;
+						break;
+					default :
+						System.out.println("숫자를 잘못 선택했어요.");
+						continue;
+					
+				}
 				System.out.println("-------");
 				speed = 0;
 				dir =0;
@@ -169,6 +159,7 @@ public class LoopEx16_테스트문제 {
 				System.out.println("도착");
 				System.out.println("비용 : " + (totalRun + 1) / 2 * 50 );
 				isRun = false;
+				break;
 			}
 			
 			
